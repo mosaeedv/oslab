@@ -1,17 +1,12 @@
 #!/bin/bash
 
-# This is script12.sh
-read_number(){
-    read num
-    echo $num
-}
-
-check_signal(){
-    if [ $1 % 2 == 0]; then
-        echo "even"
+check_file() {
+    if [ -f "$1" ]; then
+        echo "File exists"
     else
-        echo "odd"
+        echo "File not found"
     fi
 }
 
-number=$read_number 
+read -p "Enter filename: " filename
+check_file "$filename"
